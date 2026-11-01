@@ -1,0 +1,53 @@
+# What is Pointer
+`A poiter or pointer variable is a memory cell that stores the address of a data item.`
+(Problem Solving and Program Design in C, 8th section 6.1)
+
+In simple words, a pointer is variable that poits to the memory address of another variable.
+
+Syntax for dealing with pointers
+
+```c
+
+int foo = 25;
+
+int *ptr;
+
+ptr = &foo;
+printf("The address of foo %p\n", &foo); 
+printf("The address of ptr %p\n", ptr);  
+
+/*Example of output
+    The address of foo 0x7ffe2ebbf5bc
+    The address of ptr 0x7ffe2ebbf5bc 
+*/
+
+/* The reason why the output of this program is the same address is ebcause we are printing the address of foo, and then a pointer that is pointing to that address */
+
+```
+
+# Inderect Reference
+`Accessing the contents of a memory cell though a pointer variable that stores its address`
+(Problem Solving and Program Design in C, 8th section 6.1)
+
+Inderect Reference can be describe as getting the value of a variable though a pointer.
+
+Examples of this
+```c
+int n = 80; // a name n that stores the value of 80
+
+printf("The value of n %d\n", n); // print the value of n to the terminal
+int *ptrN = &n; // create a pointer variable that points to n
+
+*ptrN = 20; // we direference the value of pointer ptrN, to changes its value to 20
+
+printf("The value of n %d\n", n); // 20
+printf("The value of ptrN %d\n", *ptrN); // 20
+/*
+Example of output:
+    The value of n 80
+    The value of n 20
+    The value of ptrN 20
+*/
+
+```
+
