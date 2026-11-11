@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       775c67c9-00cc-4d6d-8d39-2bdde44eb28e
+:END:
+#+title: Variables_in_C
+

@@ -1,0 +1,101 @@
+% Created 2026-11-08 Sun 17:10
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\author{geordanny}
+\date{\today}
+\title{How\textsubscript{To}\textsubscript{Write}\textsubscript{An}\textsubscript{Arduino}\textsubscript{Program}}
+\hypersetup{
+ pdfauthor={geordanny},
+ pdftitle={How\textsubscript{To}\textsubscript{Write}\textsubscript{An}\textsubscript{Arduino}\textsubscript{Program}},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.3 (Org mode 9.6.15)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+(ASSUMING BASIC ENVIRIOMENT IS SET UP)
+
+\begin{minted}[frame=lines,fontsize=\small,breaklines=true,linenos=true]{c}
+# include <Arduino.h>
+void setup
+{
+  // Here goes code that would Ran on Start up
+}
+void loop ()
+{
+  // Code that will excuated while the Arduino is running
+}
+\end{minted}
+
+\subsection{Turning builtin Led on}
+\label{sec:org79e5f3d}
+
+\begin{minted}[frame=lines,fontsize=\small,breaklines=true,linenos=true]{c}
+# include <Arduino.h>
+void setup
+{
+  pinMode(LEDBUILT, OUTPUT); // set the pin 13 to be in output
+}
+void loop ()
+{
+  digitalWrite(LEDBUILTIN, HIGH); // set a low voltage
+  delay(1000); // delay 1 sec
+  digitalWrite(LEDBUILTIN, LOW); // send a low voltage
+  delay(1000); // delay 1 sec
+  // Code that will excuated while the Arduino is running
+}
+\end{minted}
+
+\section{Circut to light a LED on}
+\label{sec:org71e55b1}
+
+A red LED can turn with 1.2v and 5 to 20mA of current, but the Arduino
+works with a current of 5v and very high current. To prevent the
+led from recieving damage we would add a resistant to it.
+
+\subsection{Formula for this:}
+\label{sec:orgb68cbfb}
+
+\[
+R = \frac{V_s - V_1}{I}
+\]
+
+The elements on this formula are
+\begin{enumerate}
+\item \(V_s\) is the current is the suply voltage (5v)
+\item \(V_1\) is the LED forward voltage drop (1.7v)
+\item \(I\)   is the current required by the led (10mA) in Amp so, (0.001A)
+\end{enumerate}
+
+Replacing the values on the formula we would find that
+
+\begin{aligned}
+R &= \frac{5\,\text{V} - 1.7\,\text{V}}{0.001\,\text{A}}\\
+R &= \frac{3.3\,\text{V}}{0.001\,\text{A}}\\
+R &= 330\,\Omega
+\end{aligned}
+
+The general formula to the this is:
+
+\begin{center}
+V = I * R
+\end{center}
+V for voltage
+I for current
+R for resistance
+\end{document}

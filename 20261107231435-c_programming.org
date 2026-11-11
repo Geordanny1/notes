@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       7262246b-d338-481f-b9fb-b73e88333027
+:END:
+#+title: C_programming
+
+
+
+
+
+* Genral Topics on C
+[[id:a0264bdd-a32d-4cb1-8c34-548f4edee338][Variables_In_C]]
+
+
+* Arduino
+
+

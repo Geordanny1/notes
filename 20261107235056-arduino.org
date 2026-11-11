@@ -1,0 +1,50 @@
+:PROPERTIES:
+:ID:       16d9188e-789f-40b8-a569-a7e7d7e3bb07
+:END:
+#+title: Arduino
+
+* What is Arduino ?
+
+#+begin_quote
+Source: [[https://docs.arduino.cc/learn/starting-guide/whats-arduino/]] 
+Arduino is an open-source electronics platform based on easy-to-use hardware and software. Arduino boards are able to read inputs - light on a sensor, a finger on a button, or a Twitter message - and turn it into an output - activating a motor, turning on an LED, publishing something online.
+You can tell your board what to do by sending a set of instructions to the microcontroller on the board. To do so you use the Arduino programming language (based on Wiring), and the Arduino Software (IDE), based on Processing.
+#+end_quote
+
+Basically an Arduino is a easy to use plataform to create electronics relate projects without much complexity than what is strictly required, which also is the name for a brand who sells Arduino Boards.
+
+The board most popular board is called "Arduino Uno" Many other brands besides
+Arduino create this board, these are consider third-parties boards.
+
+
+* General Parts of an Arduino Board
+
+1) Usb Power Connector
+   This is the general of powering the Arduino board. It also provides the ability to upload
+   already compile code to the board. Usually boards also support the possibility to add an external
+   power supply via a jack.
+
+2) The Microcontroller
+   This is conside the the brain of the board. Usually called MCU (microcontroller-unit), is what is responsable
+   for storing and running the compile code on the Arduino. Most of the Arduino uno have the ATmega328P chip.
+
+3) Power and Analog Sockets
+   It has the ability to power via a 5V and a 3.3V this one used for shields. It has the Analog Pins (A0-A5)
+   which allows the possibily of send and recieved data from sensors via a ADC (analog to digital converter)
+
+4) Digital Pins
+   Pins (also called sockets) are numbered from 0 to 13. This are use as I/O. Pins 0 and 1 are Serial Port.
+   These port are used to recieved and send data to another devices. Sockets are the primarly way of connecting
+   things like motor, LEDS, sensors etc to board.
+
+
+* Concepts
+
+[[id:58b320bd-80bd-46b1-9ef6-d3d31e15276e][How_To_Write_An_Arduino_Program]]
+
+
+** Projects from the Book /Arduino Workshop/
+
+1. [[id:c3ee8d7f-5fa1-43c2-84ae-c2f29f097274][Creating a Blinking LED Wave]]
+2. [[id:2e7b25bb-f44b-467c-88ce-126f0053ec4d][Leds using PWM]]
+3. 

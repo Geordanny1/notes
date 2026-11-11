@@ -1,18 +1,20 @@
-# What is Pointer
+
+# Pointers
+
+## What is a Pointer?
 `A poiter or pointer variable is a memory cell that stores the address of a data item.`
 (Problem Solving and Program Design in C, 8th section 6.1)
 
-In simple words, a pointer is variable that poits to the memory address of another variable.
+In simple words, a pointer is variable that points to the memory address of another variable.
 
 Syntax for dealing with pointers
 
 ```c
 
 int foo = 25;
-
 int *ptr;
-
 ptr = &foo;
+
 printf("The address of foo %p\n", &foo); 
 printf("The address of ptr %p\n", ptr);  
 
@@ -48,6 +50,7 @@ Example of output:
     The value of n 20
     The value of ptrN 20
 */
-
 ```
+
+## Pointers to Files
 

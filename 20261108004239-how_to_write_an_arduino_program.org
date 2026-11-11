@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       58b320bd-80bd-46b1-9ef6-d3d31e15276e
+:END:
+#+title: How_To_Write_An_Arduino_Program
+
+#+begin_src C
+  # include <Arduino.h>
+  void setup
+  {
+    // Here goes code that would Ran on Start up
+  }
+  void loop ()
+  {
+    // Code that will excuated while the Arduino is running
+  }
+#+end_src
+
+** Turning builtin Led on
+
+#+begin_src C
+  # include <Arduino.h>
+  void setup
+  {
+    pinMode(LEDBUILT, OUTPUT); // set the pin 13 to be in output
+  }
+  void loop ()
+  {
+    // Code that will excuated while the Arduino is running
+    digitalWrite(LEDBUILTIN, HIGH);	// set a low voltage
+    delay(1000);			// delay 1 sec
+    digitalWrite(LEDBUILTIN, LOW);	// send a low voltage
+    delay(1000);			// delay 1 sec
+  }
+#+end_src
+
+* Circut to light a LED
+
+A red LED can turn with 1.2v and 5 to 20mA of current, but the Arduino
+works with a current of 5v and very high current. To prevent the
+led from recieving damage we would add a resistant to it.

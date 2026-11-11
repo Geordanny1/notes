@@ -1,0 +1,62 @@
+:PROPERTIES:
+:ID:       2e7b25bb-f44b-467c-88ce-126f0053ec4d
+:END:
+#+title: Leds using PWM
+#+author: Soto, Geordanny 
+
+Requirements:
+
+- Arduino Board and USB cable
+- 1 Breadboard
+- 1 LED
+- 1 560 ohms Resistor
+- 2 Connecting Wires
+ 
+* What Is Pulse Width Modulation (PWD)
+
+** /wikipeadia/
+#+begin_quote
+Pulse-width modulation (PWM), also known as pulse-duration modulation
+(PDM) or pulse-length modulation (PLM), is any method of representing
+a signal as a rectangular wave with a varying duty cycle (and for some methods also a varying period)
+#+end_quote
+Link to wikiepdia article [[https://en.wikipedia.org/wiki/Pulse-width_modulation][here]] 
+
+What is /duty cycle/?
+/Duty cylce/ is the ammount of time power is going thought he circuit. On this the longer the duty cycle is, the longer
+the led appers to be on.
+
+Is important to understand that only pins that have the '~' can be use for PWD. On this case are: 3, 5, 6, 9, 10, 11 and 13.
+
+* Code
+
+#+begin_src C
+  # include <Arduino.h>
+
+  const int RED_PIN = 3;
+
+  const int duty = 5;
+
+  void setup()
+  {
+    pinMode(RED_PIN, OUTPUT);
+  }
+
+  void  loop()
+  {
+    for (int i = 0; i <= 256; i++) {
+      analogWrite(RED_PIN, i);
+      delay(duty);
+    }
+
+    for (int i = 0; i >=0; i--) {
+      analogWrite(RED_PIN);
+      delay(duty);
+    }
+  
+    delay(200);
+
+  }
+#+end_src
+
+- /duty/  The variable /duty/ is the ammount of time the circut is receving power.

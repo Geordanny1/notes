@@ -1,0 +1,101 @@
+:PROPERTIES:
+:ID:       c3ee8d7f-5fa1-43c2-84ae-c2f29f097274
+:END:
+#+title: Creating a Blinking LED Wave
+#+EXPORT_FILE_NAME: ~/work/ledwaveproject.html
+#+AUTHOR: Soto, Geordanny
+
+Requiments for the project:
+- Fived LEDs
+- Five 560ohms resistor
+- One breadboard
+- Various connecting wires
+- Arduino Board and USB cable
+
+* Basic Code
+#+begin_src C
+# include <Arduino.h>
+void setup()
+{
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+}
+void loop()
+{
+  digitalWrite(2, HIGH); delay(1000);
+  digitalWrite(2, LOW);
+	
+  digitalWrite(3, HIGH);
+  delay(1000);
+  digitalWrite(3, LOW);
+	
+  digitalWrite(4, HIGH);
+  delay(1000);
+  digitalWrite(4, LOW);
+	
+
+  digitalWrite(5, HIGH);
+  delay(1000);
+  digitalWrite(5, LOW);
+	
+  digitalWrite(6, HIGH);
+  delay(1000);
+  digitalWrite(6, LOW);
+}
+#+end_src
+
+
+* More 'Advance Code' Code
+#+begin_src C
+
+  # include <Arduino.h
+
+  const int TIME	= 100;
+  const int PIN_RED	= 2;
+  const int PIN_WHITE	= 3;
+  const int PIN_BLUE	= 4;
+  const int PIN_GREEN	= 5;
+  const int PIN_YELLOW	= 6;
+
+  void setup()
+  {
+    pinMode(PIN_RED	, OUTPUT);
+    pinMode(PIN_WHITE	, OUTPUT);
+    pinMode(PIN_BLUE	, OUTPUT);
+    pinMode(PIN_GREEN	, OUTPUT);
+    pinMode(PIN_YELLOW	, OUTPUT);
+  }
+
+  void loop()
+  {
+    digitalWrite(PIN_RED, HIGH);
+    delay(TIME);
+    digitalWrite(PIN_RED, LOW);
+
+    digitalWrite(PIN_WHITE, HIGH);
+    delay(TIME);
+    digitalWrite(PIN_WHITE, LOW);
+
+    digitalWrite(PIN_BLUE, HIGH);
+    delay(TIME);
+    digitalWrite(PIN_BLUE, LOW);
+
+    digitalWrite(PIN_GREEN, HIGH);
+    delay(TIME);
+    digitalWrite(PIN_GREEN, LOW);
+
+    digitalWrite(PIN_YELLOW, HIGH);
+    delay(TIME);
+    digitalWrite(PIN_YELLOW, LOW);
+
+  }
+
+#+end_src
+
+
+* Code Explanation
+
+

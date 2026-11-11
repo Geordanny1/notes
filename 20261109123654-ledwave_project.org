@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       59befcb3-055f-4bc4-afc7-450a82acb4fe
+:END:
+#+title: ledwaVe project
+
+
+* LED wave project
+
+Requiremnts for this project
+- Arduino *UNO* board
+  - Arduino *USB Cable*
+
+- A bread Board
+  - Multiple Connecting Wires of Different Colors
+  - 5 lEDs
+  - 560 ohms Resistors
+
+
+#+begin_src C
+
+#+end_src
+ 
+

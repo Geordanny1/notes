@@ -1,0 +1,72 @@
+:PROPERTIES:
+:ID:       58b320bd-80bd-46b1-9ef6-d3d31e15276e
+:END:
+#+title: How_To_Write_An_Arduino_Program
+
+(ASSUMING BASIC ENVIRIOMENT IS SET UP)
+
+#+begin_src C
+  # include <Arduino.h>
+  void setup
+  {
+    // Here goes code that would Ran on Start up
+  }
+  void loop ()
+  {
+    // Code that will excuated while the Arduino is running
+  }
+#+end_src
+
+** Turning builtin Led on
+
+#+begin_src C
+  # include <Arduino.h>
+  void setup
+  {
+    pinMode(LEDBUILT, OUTPUT); // set the pin 13 to be in output
+  }
+  void loop ()
+  {
+    digitalWrite(LEDBUILTIN, HIGH); // set a low voltage
+    delay(1000); // delay 1 sec
+    digitalWrite(LEDBUILTIN, LOW); // send a low voltage
+    delay(1000); // delay 1 sec
+    // Code that will excuated while the Arduino is running
+  }
+#+end_src
+
+* Circut to light a LED on
+
+A red LED can turn with 1.2v and 5 to 20mA of current, but the Arduino
+works with a current of 5v and very high current. To prevent the
+led from recieving damage we would add a resistant to it.
+
+** Formula for this:
+
+\[
+R = \frac{V_s - V_1}{I}
+\]
+
+The elements on this formula are
+1. \(V_s\) is the current is the suply voltage (5v)
+2. \(V_1\) is the LED forward voltage drop (1.7v)
+3. \(I\)   is the current required by the led (10mA) in Amp so, (0.001A)
+
+Replacing the values on the formula we would find that
+
+\begin{aligned}
+R &= \frac{5\,\text{V} - 1.7\,\text{V}}{0.001\,\text{A}}\\
+R &= \frac{3.3\,\text{V}}{0.001\,\text{A}}\\
+R &= 330\,\Omega
+\end{aligned}
+
+The general formula to the this is:
+
+\begin{center}
+V = I * R
+\end{center}
+V for voltage
+I for current
+R for resistance
+
+

@@ -1,0 +1,131 @@
+:PROPERTIES:
+:ID:       c3ee8d7f-5fa1-43c2-84ae-c2f29f097274
+:END:
+#+EXPORT_FILE_NAME: ~/work/creating_blinking_led_wave.html
+#+title: Creating a Blinking LED Wave
+#+AUTHOR: Soto, Geordanny
+
+Requiments for the project:
+- Arduino Board and USB cable
+- 5 LEDs
+- 5 560ohms resistor
+- 1 breadboard
+- Several connecting wires
+
+* Basic Code
+#+begin_src C
+# include <Arduino.h>
+void setup()
+{
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+}
+void loop()
+{
+  digitalWrite(2, HIGH); delay(1000);
+  digitalWrite(2, LOW);
+	
+  digitalWrite(3, HIGH);
+  delay(1000);
+  digitalWrite(3, LOW);
+	
+  digitalWrite(4, HIGH);
+  delay(1000);
+  digitalWrite(4, LOW);
+	
+
+  digitalWrite(5, HIGH);
+  delay(1000);
+  digitalWrite(5, LOW);
+	
+  digitalWrite(6, HIGH);
+  delay(1000);
+  digitalWrite(6, LOW);
+}
+#+end_src
+
+
+* More 'Advance Code' Code
+#+begin_src C
+
+# include <Arduino.h
+
+const int TIME		= 100;
+const int PIN_RED	= 2;
+const int PIN_WHITE	= 3;
+const int PIN_BLUE	= 4;
+const int PIN_GREEN	= 5;
+const int PIN_YELLOW	= 6;
+
+void setup()
+{
+  pinMode(PIN_RED	, OUTPUT);
+  pinMode(PIN_WHITE	, OUTPUT);
+  pinMode(PIN_BLUE	, OUTPUT);
+  pinMode(PIN_GREEN	, OUTPUT);
+  pinMode(PIN_YELLOW	, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(PIN_RED, HIGH);
+  delay(TIME);
+  digitalWrite(PIN_RED, LOW);
+
+  digitalWrite(PIN_WHITE, HIGH);
+  delay(TIME);
+  digitalWrite(PIN_WHITE, LOW);
+
+  digitalWrite(PIN_BLUE, HIGH);
+  delay(TIME);
+  digitalWrite(PIN_BLUE, LOW);
+
+  digitalWrite(PIN_GREEN, HIGH);
+  delay(TIME);
+  digitalWrite(PIN_GREEN, LOW);
+
+  digitalWrite(PIN_YELLOW, HIGH);
+  delay(TIME);
+  digitalWrite(PIN_YELLOW, LOW);
+
+}
+
+#+end_src
+
+
+* Project 
+#+begin_src c
+# include <Arduino.h>
+
+const MAX_PIN = 6;
+const MIN_PIN = 2;
+
+void setup() 
+{
+  for (int i = MIN_PIN; i <= MAX_PIN; i++ ) {
+    pinMode(i, OUTPUT);
+  }
+}
+
+void loop()
+{
+  for(int i MIN_PIN; i <= MAX_PIN; i++) {
+    digitalWrite(i, HIGH);
+    delay(1000);
+    digitalWrite(i, LOW);
+  }
+}
+
+
+
+#+end_src
+
+* TODO add code Explanation for the foor loop
+
+* Code Explanation
+- /pinMode(pin, mode)/		: Takes a /pin/ and sets that pin be either an /OUTPUT/ or an /INPUT/ pin. More information about GPIO [[https://en.wikipedia.org/wiki/General-purpose_input/output][here]]
+- /digitalWrite(pin, value)/	: Takes a /pin/ set the value that /pin/ to either /HIGH/ or /LOW/. /HIGH/ is 5v or on shields 3.3v. /LOW/ is for ground
+- /delay(time)/			: Takes a /time/ in Mileseconds and pauses the program for that time.
